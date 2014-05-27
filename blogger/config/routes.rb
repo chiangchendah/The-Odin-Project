@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+  # make the root show our index page
+  root to: 'articles#index'
+
+  # use REST for model Article
   resources :articles
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
