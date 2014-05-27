@@ -1,9 +1,12 @@
 <%= form_for(@article) do |f| %>
+	
+	<!-- I don't know what this does yet -->
 	<ul>
 	<% @article.errors.full_messages.each do |error| %>
 		<li><%= error %></li>
 	<% end %>
 	</ul>
+
 	<p>
 		<!-- first :title for html text, second :title for ruby key -->
 		<%= f.label :title %><br />
@@ -17,3 +20,4 @@
 		<%= f.submit %>
 	</p>
 <% end %>
+

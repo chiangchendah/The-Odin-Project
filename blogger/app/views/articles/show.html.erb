@@ -1,11 +1,20 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.body %></p><br />
 
+<!-- display number of comments -->
+<h3>Comments (<%= @article.comments.size %>)</h3>
+
+<!-- renders a partial called `comment`, and do it once for each element from the collection -->
+<%= render partial: 'articles/comment', collection: @article.comments %>
+
+<!-- same page form for comments -->
+<%= render partial: 'comments/form' %>
+
 <!-- href to index.html.erb -->
 <%= link_to "<< Back to Articles List", articles_path %><br />
 
 <!-- Rails' solution to fake a DELETE HTTP request -->
 <%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %><br />
 
-<!-- edit -->
+<!-- edit route -->
 <%= link_to "Edit", edit_article_path(@article) %>

@@ -3,7 +3,13 @@ Rails.application.routes.draw do
   root to: 'articles#index'
 
   # use REST for model Article
-  resources :articles
+  resources :articles do
+    # model Comment is a sub-resource
+    resources :comments
+  end
+  
+
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

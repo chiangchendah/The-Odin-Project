@@ -1,0 +1,19 @@
+<h3>Post a Comment</h3>
+
+<!-- creates a form to create/update the attributes of a specific model object -->
+<%= form_for [ @article, @comment ] do |f| %>
+	<p>
+		<%= f.label :author_name, "Your Name" %><br />
+		<%= f.text_field :author_name %>
+	</p>
+	<p>
+		<!-- label value -->
+		<%= f.label :body, "Your Comment" %><br />
+		<!-- object key -->
+		<%= f.text_area :body %>
+	</p>
+	<p>
+		<!-- default value is 'Create Comment' -->
+		<%= f.submit 'Submit' %>
+	</p>
+<% end %>

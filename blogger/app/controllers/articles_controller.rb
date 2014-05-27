@@ -10,11 +10,17 @@ class ArticlesController < ApplicationController
 	# display processed data
 	def show
 		@article = Article.find(params[:id])
+
+		# reflection for comment form
+		@comment = Comment.new
+		# id manually assigned for mass assignment protection
+		@comment.article_id = @article.id
 	end
 
 	# display form 
 	def new
-		# reflection technique to tell object attributes
+		# reflection technique 
+		# blank object for Rails to tell which fields an article has 
 		@article = Article.new
 	end
 
@@ -52,7 +58,7 @@ class ArticlesController < ApplicationController
 
 		# redirects to index page
 		redirect_to articles_path
-		fail
+		
 	end
 
 	def edit
