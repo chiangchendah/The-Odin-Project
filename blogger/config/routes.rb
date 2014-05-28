@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     # model Comment is a sub-resource
     resources :comments
   end
-  
+  resources :tags
 
 
   
